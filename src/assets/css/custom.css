@@ -1,0 +1,43 @@
+/**********************************
+        LENDSQR CSS SETTING - AHUA, GODWIN CHIDI
+**********************************/
+
+
+/******************** GOOGLE FONT ******************/
+
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+
+/******************** LENDSQR FONT ******************/
+
+@font-face {
+    font-family: 'lendqsr';
+    src: url("../font/AvenirNextLTPro-Bold.otf"),
+        url("../font/AvenirNextLTPro-It.otf"),
+        url("../font/AvenirNextLTPro-Regular.otf");
+    font-style: normal;
+}
+
+
+/******************** LENDSQR ROOT AND DEFAULT SETTING ******************/
+
+:root {
+    --lendqsr-app: #fff;
+    --lendqsr-work-san: 'Work Sans', sans-serif;
+    --lendqsr-font: "lendqsr";
+    --lendqsr-main: #FBFBFB;
+    --lendqsr-primary: #213F7D;
+    --lendqsr-secondary: #39CDCC;
+    --lendqsr-login: #545F7D;
+    --lendqsr-layout-main: #E5E5E5;
+}
+
+
+* {
+    padding: 0;
+    margin: 0;
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+}
+
+

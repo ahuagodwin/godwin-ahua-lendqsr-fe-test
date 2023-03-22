@@ -1,0 +1,44 @@
+
+.navbar__wrapper {
+    @apply flex justify-between items-center px-10 lg:px-14 py-4;
+}
+
+.navbar__left__wrapper {
+    @apply flex justify-center items-center gap-4 lg:gap-36
+}
+
+.navbar__search__input {
+    @apply hidden lg:flex justify-center items-center;
+}
+
+.navbar__search__input input {
+    @apply p-2 w-full border-opacity-[15%] rounded-l-md rounded-bl-md rounded-tr-none rounded-br-none;
+    border: 1px solid var(--lendqsr-primary);
+}
+
+.navbar__search__input span{
+    background-color: var(--lendqsr-secondary);
+    @apply p-[14px] rounded-r-md rounded-br-md;
+}
+
+
+.navbar__right__wrapper {
+    @apply flex justify-center items-center gap-10;
+}
+
+.navbar__right__wrapper p:nth-child(1) {
+    text-decoration: underline;
+    cursor: pointer
+}
+
+.navbar__right__wrapper svg:nth-child(2) {
+    cursor: pointer;
+}
+
+.navbar__right__wrapper__user {
+    @apply flex justify-center items-center gap-2 cursor-pointer;
+}
+
+.navbar__right__wrapper p:nth-child(1), .navbar__right__wrapper svg:nth-child(2) {
+    @apply hidden lg:block
+}

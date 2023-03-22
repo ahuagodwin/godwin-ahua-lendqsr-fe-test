@@ -1,0 +1,35 @@
+
+
+/***************** USER SCREEN - CARD  ******************/
+
+.card__wrapper {
+    @apply grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-5;
+}
+
+.card__wrapper .card__container {
+    background-color: var(--lendqsr-app);
+    @apply p-6 flex flex-col justify-start items-start space-y-4;
+}
+
+
+.card__wrapper .card__container span {
+    color: var(--lendqsr-login);
+    font-family: var(--lendqsr-work-san);
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16.42px;
+    text-transform: uppercase;
+}
+
+
+.card__wrapper .card__container p {
+    color: var(--lendqsr-primary);
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 28.15px;
+    text-transform: uppercase;
+}
+
+
+
+/***************** USER SCREEN - TABLE  ******************/

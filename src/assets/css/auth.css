@@ -1,0 +1,80 @@
+
+
+/* ************ AUTH LOGIN ************/
+
+/* left */
+.auth__layout {
+    @apply block lg:flex justify-center items-center h-screen
+}
+
+
+.auth__layout__left {
+    background-color: var(--lendqsr-main);
+    @apply w-full lg:w-[50%] hidden lg:flex flex-col justify-start items-start p-20 h-screen
+}
+
+.auth__layout__left img {
+    @apply mt-40;
+}
+
+
+
+/* right */
+
+.auth__layout__right {
+    @apply w-full lg:w-[50%] flex flex-col justify-center items-start p-10 lg:py-20 lg:pl-20 lg:pr-36 h-screen
+}
+
+.auth__layout__right p:nth-child(1) {
+    color: var(--lendqsr-primary);
+    font-family: var(--lendqsr-work-san);
+    font-size: 40px;
+    font-weight: 700;
+}
+
+.auth__layout__right p:nth-child(2) {
+    color: var(--lendqsr-login);
+    font-family: var(--lendqsr-work-san);
+    font-size: 18px;
+    font-weight: 400;
+    margin-bottom: 40px;
+}
+
+.auth__login__wrapper {
+    @apply w-full space-y-4;
+}
+
+.auth__layout__input {
+    border: 2px solid var(--lendqsr-login);
+    opacity: 15%;
+    @apply p-3 w-full rounded-md focus:outline-none;
+}
+
+.auth__layout__input::placeholder {
+    font-family: var(--lendqsr-work-san);
+    text-transform: capitalize;
+}
+
+.auth__login__wrapper p {
+    color: var(--lendqsr-secondary);
+    font-size: 13px;
+    font-weight: 400;
+    font-family: var(--lendqsr-font);
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+
+.auth__layout__btn {
+    background-color: var(--lendqsr-secondary);
+    font-family: var(--lendqsr-font);
+    font-size: 18px;
+    font-weight: 300;
+    margin-top: 30px;
+    width: 100%;
+    border-radius: 8px;
+    line-height: 19.12px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    @apply p-4;
+}
