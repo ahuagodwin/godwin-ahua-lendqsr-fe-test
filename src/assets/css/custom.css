@@ -40,4 +40,55 @@
     box-sizing: border-box;
 }
 
+body {
+    background: var(--lendqsr-layout-main);
+}
 
+
+.ellipsis {
+    text-overflow: ellipsis;
+    /* enables ellipsis */
+    white-space: nowrap;
+    /* keeps the text in a single line */
+    overflow: hidden;
+    /* keeps the element from overflowing its parent */
+}
+
+
+/* TRANSACTION  STATUS INDICATION*/
+.status__before__content::before {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    content: '';
+    position: relative;
+    left: -10px;
+    background-color: gray;
+    border-radius: 100%;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    -ms-border-radius: 100%;
+    -o-border-radius: 100%;
+}
+
+
+.status__before__content.successful::before,
+.status__before__content.success::before,
+.status__before__content.active::before,
+.status__before__content.enabled::before,
+.status__before__content.online::before {
+    background-color: #39CD62;
+}
+
+.status__before__content.failed::before,
+.status__before__content.blacklisted::before {
+    background-color: #E4033B;
+}
+
+.status__before__content.pending::before {
+    background-color: #E9B200;
+}
+
+.status__before__content.Inactive::before {
+    background-color: #545F7D;
+}

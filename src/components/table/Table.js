@@ -1,17 +1,46 @@
-import React from "react";
-import { table_body, table_head } from "../../common/data/data";
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { table_head } from "../../common/data/data";
 import { Style } from "../../common/styled/Styled";
 import { Icons } from "../../constant/Icons";
+import { fetchAdminUser, selectUser } from "../../state/slice/User-Slice";
 
-const Table = () => {
+const Table = ({ userId }) => {
+  const [isVisible, setIsVisible] = useState(false);
+  const dispatch = useDispatch();
+  const { loading, user, error } = useSelector(selectUser);
+
+  useEffect(() => {
+    dispatch(fetchAdminUser());
+  }, [dispatch]);
+
+  if (error) {
+    return <div>Error: {error}</div>;
+  }
+
+  const getStatus = (user) => {
+    const createdAt = new Date(user.createdAt);
+    const currentTime = new Date();
+    const timeDiff = Math.abs(currentTime - createdAt);
+    const daysDiff = Math.ceil(timeDiff / (1000 * 60 * 60 * 24 * 365));
+    if (daysDiff < 30) {
+      return "pending";
+    } else if (daysDiff >= 30 && daysDiff < 180) {
+      return "active";
+    } else if (daysDiff >= 180 && daysDiff > 365) {
+      return "Inactive";
+    } else {
+      return "blacklisted";
+    }
+  };
+
   return (
     <>
-      <div className="relative overflow-x-auto shadow-md sm:rounded-lg mt-10">
+      <div className="relative overflow-x-auto shadow-md sm:rounded-lg mt-10 h-[35rem]">
         <table className="w-full text-sm text-left text-black bg-white p-4">
           <thead className="text-xs uppercase bg-[#F9FAFB] text-black">
-            
-                <tr>
-                {table_head.map((item, i) => (
+            <tr>
+              {table_head.map((item, i) => (
                 <th scope="col" className="px-4 py-3" key={i}>
                   <div className="flex items-center">
                     {item.title}
@@ -21,33 +50,78 @@ const Table = () => {
                     </Style.Section>
                   </div>
                 </th>
-                 ))}
-                <th scope="col" className="px-6 py-3">
-                  <span className="sr-only">Action</span>
-                </th>
-                
-              </tr>
-           
+              ))}
+              <th scope="col" className="px-6 py-3">
+                <span className="sr-only">Action</span>
+              </th>
+            </tr>
           </thead>
           <tbody>
-          {table_body.map((item, i) => (
-              <tr className="bg-white text-[#545F7D">
-              <th
-                scope="row"
-                className="px-4 py-4 font-medium whitespace-nowrap"
-              >
-               {item.organization}
-              </th>
-              <td className="px-4 py-4">{item.username}</td>
-              <td className="px-4 py-4">{item.email}</td>
-              <td className="px-4 py-4">{item.phone}</td>
-              <td className="px-4 py-4">{item.createdAt}</td>
-              <td className="px-4 py-4">{item.status}</td>
-              <td className="px-4 py-4 text-right">
-                <Icons.LendqsrMore className="cursor-pointer"/>
-              </td>
-            </tr>
-          ))}
+            <>
+              {loading ? (
+                <tr>
+                  <td colSpan="7">Loading...</td>
+                </tr>
+              ) : error ? (
+                <tr>
+                  <td colSpan="7">Error: {error}</td>
+                </tr>
+              ) : (
+                <>
+                  {user?.slice(0, 10).map((item, id) => (
+                    <tr className="bg-white text-[#545F7D relative" key={id}>
+                      <th
+                        scope="row"
+                        className="px-4 py-4 font-medium whitespace-nowrap ellipsis"
+                      >
+                        {item.orgName.length > 10
+                          ? item.orgName.slice(0, 10) + "..."
+                          : item.orgName}
+                      </th>
+                      <td className="px-4 py-4 ellipsis">{item.userName}</td>
+                      <td className="px-4 py-4 ellipsis">{item.email}</td>
+                      <td className="px-4 py-4 ellipsis">{item.phoneNumber}</td>
+                      <td className="px-4 py-4 ellipsis">
+                        {item.createdAt.length > 10
+                          ? item.createdAt.slice(0, 10) + "..."
+                          : item.createdAt}
+                      </td>
+                      <td
+                        className={`px-4 py-4 ellipsis status__before__content ${
+                          getStatus(item).toString().toLowerCase() === "active"
+                            ? "active"
+                            : getStatus(item) === "blacklisted"
+                            ? "blacklisted"
+                            : getStatus(item) === "Inactive"
+                            ? "Inactive"
+                            : getStatus(item) === "pending"
+                            ? "pending"
+                            : "pending"
+                        }`}
+                      >
+                        {getStatus(item)}
+                      </td>
+                      <td className="px-4 py-4 text-right">
+                        <Icons.LendqsrMore
+                          className="cursor-pointer"
+                          onClick={() => setIsVisible(item.id)}
+                        />
+
+                        {isVisible === item.id && (
+                          <div className="p-3 absolute top-0 right-9 bg-white rounded-md shadow-md items-start text-left z-50">
+                            <div className="flex flex-col space-y-2 items-start text-left">
+                              <p>View Details</p>
+                              <p>Active User</p>
+                              <p>blacklist User</p>
+                            </div>
+                          </div>
+                        )}
+                      </td>
+                    </tr>
+                  ))}
+                </>
+              )}
+            </>
           </tbody>
         </table>
       </div>

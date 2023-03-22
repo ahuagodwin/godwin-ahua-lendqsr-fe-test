@@ -443,6 +443,7 @@ export const LendqsrMore = (props) => {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       className={props.className}
+      onClick={props.onClick}
     >
       <g clip-path="url(#clip0_879_44185)">
         <path

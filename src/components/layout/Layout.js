@@ -8,11 +8,11 @@ const DashboardLayout = () => {
   return (
     <>
       <Style.Wrapper>
-        <Style.Section>
+        <Style.Section sx="fixed bg-white w-full">
           <Navbar />
         </Style.Section>
         <Style.Wrapper sx="layout__wrapper">
-            <Style.Wrapper sx="layout__wrapper__sidebar"> <Sidebar /></Style.Wrapper>
+            <Style.Wrapper sx="layout__wrapper__sidebar mt-[5rem]"> <Sidebar /></Style.Wrapper>
           <Style.Section sx="layout__main">
              <Style.Span> {window.location.pathname === "/dashboard" ? "Overview" : window.location.pathname.split("/")[2]}</Style.Span>
             <Style.Wrapper>

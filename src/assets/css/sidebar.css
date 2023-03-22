@@ -1,7 +1,7 @@
 
 
 .sidebar {
-    @apply h-screen w-0 lg:w-[283px] pl-2 fixed left-0;
+    @apply h-screen w-0 lg:w-[250px] pl-2 fixed left-0;
     background-color: var(--lendqsr-app);
 }
 
@@ -33,7 +33,7 @@
 }
 
 .layout__wrapper {
-    @apply flex justify-start items-start h-screen;
+    @apply flex justify-start items-start h-[100vh];
     background-color: var(--lendqsr-layout-main);
 }
 
@@ -42,7 +42,7 @@
 }
 
 .layout__main {
-    @apply ml-5 lg:ml-[18rem] mr-5 lg:mr-10 w-full p-4;
+    @apply ml-5 lg:ml-[16rem] mr-5 lg:mr-7 w-full p-4 mt-20;
 }
 
 .layout__main span {
