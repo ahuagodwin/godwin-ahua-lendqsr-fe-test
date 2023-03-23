@@ -56,7 +56,7 @@ export const adminUserSlice = createSlice({
   },
 });
 
-export const { fetchDataStart, fetchDataSuccess, fetchDataFailure } =
+export const { fetchDataStart, fetchDataSuccess, fetchDataFailure, activateUser, blacklistUser } =
   adminUserSlice.actions;
 
 export const selectUser = (state) => state.user;

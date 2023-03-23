@@ -10,4 +10,5 @@ export { default as Table } from "./table/Table";
 
 export * from "./auth";
 export * from "./card";
+export * from "./user-details";
 

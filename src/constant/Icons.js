@@ -13,6 +13,8 @@ import {
   LendqsrUserSavingIcon,
   LendqsrMore,
   LendqsrSort,
+  LendqsrUserAvatar,
+  LendqsrUserRating,
 } from "../assets/icons/Icons";
 
 import { ImSpinner9 as Spinner } from "react-icons/im";
@@ -35,4 +37,6 @@ export const Icons = {
   LendqsrUserSavingIcon,
   LendqsrMore,
   LendqsrSort,
+  LendqsrUserAvatar,
+  LendqsrUserRating,
 }

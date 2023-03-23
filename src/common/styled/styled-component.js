@@ -68,6 +68,7 @@ export const Input = (props) => {
 export const Button = (props) => {
     return (
       <button
+        key={props.key}
         type={props.type ?? undefined}
         onClick={props.onClick ?? undefined}
         id={props.id ?? undefined}

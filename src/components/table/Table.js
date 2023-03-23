@@ -1,22 +1,22 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import { table_head } from "../../common/data/data";
 import { Style } from "../../common/styled/Styled";
 import { Icons } from "../../constant/Icons";
 import { fetchAdminUser, selectUser } from "../../state/slice/User-Slice";
 
-const Table = ({ userId }) => {
+const Table = () => {
   const [isVisible, setIsVisible] = useState(false);
   const dispatch = useDispatch();
   const { loading, user, error } = useSelector(selectUser);
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     dispatch(fetchAdminUser());
   }, [dispatch]);
 
-  if (error) {
-    return <div>Error: {error}</div>;
-  }
 
   const getStatus = (user) => {
     const createdAt = new Date(user.createdAt);
@@ -33,6 +33,7 @@ const Table = ({ userId }) => {
       return "blacklisted";
     }
   };
+
 
   return (
     <>
@@ -87,7 +88,7 @@ const Table = ({ userId }) => {
                           : item.createdAt}
                       </td>
                       <td
-                        className={`px-4 py-4 ellipsis status__before__content ${
+                        className={`px-4 py-4 ellipsis items-center status__before__content ${
                           getStatus(item).toString().toLowerCase() === "active"
                             ? "active"
                             : getStatus(item) === "blacklisted"
@@ -110,9 +111,9 @@ const Table = ({ userId }) => {
                         {isVisible === item.id && (
                           <div className="p-3 absolute top-0 right-9 bg-white rounded-md shadow-md items-start text-left z-50">
                             <div className="flex flex-col space-y-2 items-start text-left">
-                              <p>View Details</p>
-                              <p>Active User</p>
-                              <p>blacklist User</p>
+                              <p onClick={() => navigate(`/dashboard/user/${item.id}`)}>View Details</p>
+                              <p className="cursor-pointer">Activate User</p>
+                              <p className="cursor-pointer">Blacklist User</p>
                             </div>
                           </div>
                         )}

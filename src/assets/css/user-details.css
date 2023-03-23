@@ -1,0 +1,83 @@
+
+
+/* USER DETAILS CSS */
+
+.user__card__wrapper {
+    background: var(--lendqsr-app);
+    @apply block sm:flex md:flex lg:flex justify-between items-center p-5 my-4 space-y-5 lg:space-y-0;
+}
+
+
+.user__card__info {
+    @apply block sm:block md:flex lg:flex items-center gap-4
+}
+
+.user__card__wrapper p, .user__card__info p {
+    color: var(--lendqsr-primary);
+    font-family: var(--lendqsr-work-san);
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.user__card__wrapper span, .user__card__info span {
+    color: var(--lendqsr-login);
+    font-family: var(--lendqsr-work-san);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 16.42px;
+}
+
+
+/* USER CARD TAB */
+.user__card__tab {
+    background-color: var(--lendqsr-app);
+    @apply block sm:flex md:flex lg:flex justify-between items-center p-4 gap-5;
+}
+
+.user__card__tab p:nth-child(1) {
+    color: var(--lendqsr-secondary);
+    border-bottom: 1px solid var(--lendqsr-secondary);
+}
+
+
+/* CUSTOM TAB */
+.tab__active {
+    color: var(--lendqsr-secondary);
+    border-bottom: 1px solid var(--lendqsr-secondary);
+}
+
+
+/* USER PERSONAL INFORMATION */
+.user__person__card__wrapper {
+    background: var(--lendqsr-app);
+    @apply p-6;
+}
+
+.user__person__card__wrapper .card__caption {
+    color: var(--lendqsr-primary);
+    font-family: var(--lendqsr-work-san);
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+}
+
+.user__person__card {
+    @apply block sm:flex md:flex lg:flex justify-between items-center py-3
+}
+
+.user__person__card p {
+    color: var(--lendqsr-login);
+    font-family: var(--lendqsr-work-san);
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14.08px;
+    text-transform: uppercase;
+}
+
+.user__person__card span {
+    color: var(--lendqsr-login);
+    font-family: var(--lendqsr-work-san);
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+}
