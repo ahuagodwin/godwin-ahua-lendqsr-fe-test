@@ -5,7 +5,7 @@ const header = () => {
   return (
     <>
       <Style.Wrapper sx="block lg:flex justify-between items-center">
-        <Style.Text>User Details</Style.Text>
+        <Style.Text sx="header-title">User Details</Style.Text>
         <Style.Section sx="flex justify-center items-center gap-3">
           <Style.Button
             name="BLACKLIST USER"

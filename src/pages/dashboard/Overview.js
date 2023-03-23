@@ -1,19 +1,20 @@
 import React from 'react';
 import { user__card__overview } from '../../common/data/data';
 import { Style } from '../../common/styled/Styled';
-import { OverviewCard, Table } from '../../components';
+import { DashboardLayout, OverviewCard, Table } from '../../components';
 
 
 const Overview = () => {
 
   return (
     <>
-      
+      <DashboardLayout>
       <Style.Wrapper>
           <OverviewCard data={user__card__overview}/>
           <Table />
-      </Style.Wrapper>
-
+        </Style.Wrapper>
+      </DashboardLayout>
+    
     </>
   )
 }

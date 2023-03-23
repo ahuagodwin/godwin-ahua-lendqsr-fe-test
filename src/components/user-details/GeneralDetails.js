@@ -1,6 +1,6 @@
 import React from 'react'
 import { Style } from '../../common/styled/Styled';
-import { EducationEmployment, PersonalInformation } from './general-details';
+import { EducationEmployment, Guarantor, PersonalInformation, Socials } from './general-details';
 
 
 const GeneralDetals = () => {
@@ -8,6 +8,8 @@ const GeneralDetals = () => {
     <Style.Wrapper sx="user__person__card__wrapper">
         <PersonalInformation />
         <EducationEmployment />
+        <Socials />
+        <Guarantor />
     </Style.Wrapper>
   )
 }

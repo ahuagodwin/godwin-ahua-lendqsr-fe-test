@@ -8,11 +8,11 @@ const HederCard = () => {
 
     const tabs = [
         { label: 'General Details', content: <GeneralDetails /> },
-        { label: 'Document', content: <p>This is tab 2.</p> },
-        { label: 'Bank Details', content: <p>This is tab 3.</p> },
-        { label: 'Loan', content: <p>This is tab 3.</p> },
-        { label: 'Saving', content: <p>This is tab 3.</p> },
-        { label: 'App and System', content: <p>This is tab 3.</p> },
+        { label: 'Document', content: <p>Lendqsr Document</p> },
+        { label: 'Bank Details', content: <p>Lendqsr Bank Details</p> },
+        { label: 'Loan', content: <p>Lendqsr Loan</p> },
+        { label: 'Saving', content: <p>Lendqsr Saving</p> },
+        { label: 'App and System', content: <p>Lendqsr App and System</p> },
       ];
 
   return (

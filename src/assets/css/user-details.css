@@ -2,6 +2,14 @@
 
 /* USER DETAILS CSS */
 
+.header-title {
+    color: var(--lendqsr-primary);
+    font-family: var(--lendqsr-work-san);
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 28.15px;
+}
+
 .user__card__wrapper {
     background: var(--lendqsr-app);
     @apply block sm:flex md:flex lg:flex justify-between items-center p-5 my-4 space-y-5 lg:space-y-0;
