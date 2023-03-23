@@ -50,10 +50,21 @@ export const dahsboard = [
     label: "Businesses",
     dahsboard: [
       {
-        label: "Customers",
         icons: <Icons.LendqsrDashboard />,
         name: "Organization",
-        path: "/dashboard/organization",
+        path: "#",
+      },
+
+      {
+        icons: <Icons.LendqsrDashboard />,
+        name: "Loan Product",
+        path: "#",
+      },
+
+      {
+        icons: <Icons.LendqsrDashboard />,
+        name: "Saving Product",
+        path: "#",
       },
     ],
   },
@@ -119,44 +130,4 @@ export const table_head = [
         title: "Status",
         sort: <Icons.LendqsrSort />
     },
-]
-
-
-export const table_body = [
-  {
-    organization: "Lendqsr",
-    username: "Godwin",
-    email: "Godwincahua@gmail.com",
-    phone: "08138885517",
-    createdAt: "May 15, 2020 10:00 AM",
-    status: "Active"
-  },
-
-  {
-    organization: "Lendqsr",
-    username: "Godwin",
-    email: "Godwincahua@gmail.com",
-    phone: "08138885517",
-    createdAt: "May 15, 2020 10:00 AM",
-    status: "Pending"
-  },
-
-  {
-    organization: "Lendqsr",
-    username: "Godwin",
-    email: "Godwincahua@gmail.com",
-    phone: "08138885517",
-    createdAt: "May 15, 2020 10:00 AM",
-    status: "Blacklisted"
-  },
-
-  {
-    organization: "Lendqsr",
-    username: "Godwin",
-    email: "Godwincahua@gmail.com",
-    phone: "08138885517",
-    createdAt: "May 15, 2020 10:00 AM",
-    status: "Inactive"
-  },
-
 ]

@@ -4,6 +4,7 @@ import { EducationEmployment, Guarantor, PersonalInformation, Socials } from './
 
 
 const GeneralDetals = () => {
+  
   return (
     <Style.Wrapper sx="user__person__card__wrapper">
         <PersonalInformation />

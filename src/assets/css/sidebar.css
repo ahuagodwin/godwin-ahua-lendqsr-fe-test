@@ -20,16 +20,16 @@
 
 
 .sidebar__path__item {
-    @apply flex flex-col justify-center items-start pb-5;
+    @apply flex flex-col justify-center items-start pb-4;
 }
 
 .sidebar__path__item p:nth-child(1) {
     @apply flex justify-start items-center px-5;
-    color: var(--lendqsr-login);
+    color: var(--lendqsr-primary);
 }
 
 .sidebar__path__item a {
-    @apply flex justify-start items-center gap-2 py-3 px-5;
+    @apply flex justify-start items-center gap-2 py-2 px-5;
 }
 
 .layout__wrapper {

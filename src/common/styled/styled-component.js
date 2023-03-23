@@ -18,7 +18,7 @@ export const PublicLayout = (props) => {
 
 export const Section = (props) => {
     return (
-        <section className={`${props.sx}`}>{props.children}</section>
+        <section className={`${props.sx}`} onClick={props.onClick}>{props.children}</section>
     )
 };
 

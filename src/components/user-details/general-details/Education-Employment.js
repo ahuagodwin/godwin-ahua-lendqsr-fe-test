@@ -1,45 +1,65 @@
-import React from 'react'
-import { Style } from '../../../common/styled/Styled'
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useParams } from "react-router-dom";
+import Loader from "../../../common/loader/Loader";
+import { Style } from "../../../common/styled/Styled";
+import {
+  fetchAdminUserById,
+  selectUser,
+} from "../../../state/slice/User-Slice";
 
 const EducationEmployment = () => {
+  const { id } = useParams();
+  const dispatch = useDispatch();
+  const { loading, user, error } = useSelector(selectUser);
+
+  useEffect(() => {
+    dispatch(fetchAdminUserById(id));
+  }, [dispatch, id]);
+
+
   return (
-    <Style.Wrapper sx="border-b border-[#213F7D] border-opacity-[0.1] mb-3">
-        <Style.Text sx="card__caption">Education and Employment</Style.Text>
-    <Style.Section sx="user__person__card">
-        <Style.Wrapper>
-            <Style.Text>level of Education</Style.Text>
-            <Style.Span>B.Sc</Style.Span>
-        </Style.Wrapper>
-        <Style.Wrapper>
-            <Style.Text>employment Status</Style.Text>
-            <Style.Span>Employed</Style.Span>
-        </Style.Wrapper>
-        <Style.Wrapper>
-            <Style.Text>sector of employment</Style.Text>
-            <Style.Span>FinTech</Style.Span>
-        </Style.Wrapper>
-        <Style.Wrapper>
-            <Style.Text>duration of employment</Style.Text>
-            <Style.Span>2 Years</Style.Span>
-        </Style.Wrapper>
-    </Style.Section>
+   <>
+    {loading ? (<Loader />) : error ? (<div>Error {error}</div>) : (
+         <Style.Wrapper sx="border-b border-[#213F7D] border-opacity-[0.1] mb-3">
+         <Style.Text sx="card__caption">Education and Employment</Style.Text>
+         <Style.Section sx="user__person__card">
+           <Style.Wrapper>
+             <Style.Text>level of Education</Style.Text>
+             <Style.Span>{user?.education?.level}</Style.Span>
+           </Style.Wrapper>
+           <Style.Wrapper>
+             <Style.Text>employment Status</Style.Text>
+             <Style.Span>{user?.education?.employmentStatus}</Style.Span>
+           </Style.Wrapper>
+           <Style.Wrapper>
+             <Style.Text>sector of employment</Style.Text>
+             <Style.Span>{user?.education?.sector}</Style.Span>
+           </Style.Wrapper>
+           <Style.Wrapper>
+             <Style.Text>duration of employment</Style.Text>
+             <Style.Span>{user?.education?.duration}</Style.Span>
+           </Style.Wrapper>
+         </Style.Section>
+   
+         <Style.Section sx="user__person__card">
+           <Style.Wrapper>
+             <Style.Text>office email</Style.Text>
+             <Style.Span>{user?.education?.officeEmail}</Style.Span>
+           </Style.Wrapper>
+           <Style.Wrapper>
+             <Style.Text>monthly income</Style.Text>
+             <Style.Span>₦ {user?.education?.monthlyIncome[0]}</Style.Span>
+           </Style.Wrapper>
+           <Style.Wrapper>
+             <Style.Text>Loan repayment</Style.Text>
+             <Style.Span>₦ {user?.education?.loanRepayment}</Style.Span>
+           </Style.Wrapper>
+         </Style.Section>
+       </Style.Wrapper>
+    )}
+   </>
+  );
+};
 
-    <Style.Section sx="user__person__card">
-        <Style.Wrapper>
-            <Style.Text>office email</Style.Text>
-            <Style.Span>godwin@lendqsr.com</Style.Span>
-        </Style.Wrapper>
-        <Style.Wrapper>
-            <Style.Text>monthly income</Style.Text>
-            <Style.Span>₦ 400,000.00</Style.Span>
-        </Style.Wrapper>
-        <Style.Wrapper>
-            <Style.Text>Loan repayment</Style.Text>
-            <Style.Span>₦ 40,000.00</Style.Span>
-        </Style.Wrapper>
-    </Style.Section>
-    </Style.Wrapper>
-  )
-}
-
-export default EducationEmployment
+export default EducationEmployment;

@@ -40,13 +40,12 @@ const Table = () => {
       <div className="relative overflow-x-auto shadow-md sm:rounded-lg mt-10 h-[35rem]">
         <table className="w-full text-sm text-left text-black bg-white p-4">
           <thead className="text-xs uppercase bg-[#F9FAFB] text-black">
-            <tr>
-              {table_head.map((item, i) => (
-                <th scope="col" className="px-4 py-3" key={i}>
+            <tr className="relative">
+              {table_head.map((item, id) => (
+                <th scope="col" className="px-4 py-3" key={id}>
                   <div className="flex items-center">
                     {item.title}
                     <Style.Section sx="cursor-pointer ml-2">
-                      {" "}
                       {item.sort}
                     </Style.Section>
                   </div>
@@ -111,7 +110,7 @@ const Table = () => {
                         {isVisible === item.id && (
                           <div className="p-3 absolute top-0 right-9 bg-white rounded-md shadow-md items-start text-left z-50">
                             <div className="flex flex-col space-y-2 items-start text-left">
-                              <p onClick={() => navigate(`/dashboard/user/${item.id}`)}>View Details</p>
+                              <p onClick={() => navigate(`/dashboard/user/${item.id}`)} className="cursor-pointer">View Details</p>
                               <p className="cursor-pointer">Activate User</p>
                               <p className="cursor-pointer">Blacklist User</p>
                             </div>
