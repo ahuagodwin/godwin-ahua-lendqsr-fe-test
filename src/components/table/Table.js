@@ -41,7 +41,8 @@ const Table = () => {
 
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-  const currentItems = user?.slice(indexOfFirstItem, indexOfLastItem);
+  const currentItems = user && user.length > 0 ? user.slice(indexOfFirstItem, indexOfLastItem) : [];
+
 
   const handlePageChange = (pageNumber) => {
     setCurrentPage(pageNumber);
@@ -138,10 +139,10 @@ const Table = () => {
                               >
                                 View Details
                               </Style.Text>
-                              <Style.Text sx="cursor-pointer activate">
+                              <Style.Text sx="activate">
                                 Activate User
                               </Style.Text>
-                              <Style.Text sx="cursor-pointer blacklist">
+                              <Style.Text sx="blacklist">
                                 Blacklist User
                               </Style.Text>
                             </Style.Section>

@@ -51,7 +51,7 @@ export const Img = (props) => {
 
 export const Text = (props) => {
     return (
-        <p className={props.sx}>{props.children}</p>
+        <p className={props.sx} onClick={props.onClick}>{props.children}</p>
     )
 }
 

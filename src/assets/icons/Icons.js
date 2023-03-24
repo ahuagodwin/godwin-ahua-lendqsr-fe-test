@@ -180,14 +180,15 @@ export const LendqsrDashboard = () => {
   );
 };
 
-export const LendqsrDashboardLogo = () => {
+export const LendqsrDashboardLogo = ({width, height, sx }) => {
   return (
     <svg
-      width="145"
-      height="30"
+      width={width}
+      height={height}
       viewBox="0 0 145 30"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      className={sx}
     >
       <path
         fillRule="evenodd"
