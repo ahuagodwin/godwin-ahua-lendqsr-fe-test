@@ -8,7 +8,7 @@ const DashboardLayout = (props) => {
   return (
     <>
       <Style.Wrapper>
-        <Style.Section sx="fixed bg-white w-full">
+        <Style.Section sx="navbar__bg">
           <Navbar />
         </Style.Section>
         <Style.Wrapper sx="layout__wrapper">

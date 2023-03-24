@@ -12,15 +12,17 @@ const Table = () => {
   const dispatch = useDispatch();
   const { loading, user, error } = useSelector(selectUser);
   const [currentPage, setCurrentPage] = useState(1);
-  const [itemsPerPage, setItemsPerPage] = useState(10); // Define itemsPerPage state
+  const [itemsPerPage, setItemsPerPage] = useState(10);
+
 
   const navigate = useNavigate();
-
 
   useEffect(() => {
     dispatch(fetchAdminUser());
   }, [dispatch]);
 
+
+// a function to handle the status of each user
   const getStatus = (user) => {
     const createdAt = new Date(user.createdAt);
     const currentTime = new Date();
@@ -45,63 +47,67 @@ const Table = () => {
     setCurrentPage(pageNumber);
   };
 
-  const handleItemsPerPageChange = (itemsPerPage) => { // Define handleItemsPerPageChange function
+  const handleItemsPerPageChange = (itemsPerPage) => {
+    // Define handleItemsPerPageChange function
     setItemsPerPage(itemsPerPage);
   };
 
   return (
     <>
-      <div className="relative overflow-x-auto shadow-md sm:rounded-lg mt-10 h-[35rem]">
-        <table className="w-full text-sm text-left text-black bg-white p-4">
-          <thead className="text-xs uppercase bg-[#F9FAFB] text-black">
-            <tr className="relative">
+      <Style.Wrapper sx="relative overflow-x-auto shadow-md sm:rounded-lg mt-10 h-[35rem]">
+        <Style.Table sx="w-full text-sm text-left text-black bg-white p-4">
+          <Style.THead sx="text-xs uppercase bg-[#F9FAFB] text-black">
+            <Style.TR sx="relative">
               {table_head.map((item, id) => (
-                <th scope="col" className="px-4 py-3" key={id}>
-                  <div className="flex items-center">
+                <Style.TH scope="col" sx="px-4 py-3" key={id}>
+                  <Style.Section sx="flex items-center">
                     {item.title}
-                    <Style.Section sx="cursor-pointer ml-2">
+                    <Style.Section
+                      sx="cursor-pointer ml-2"
+                    >
                       {item.sort}
                     </Style.Section>
-                  </div>
-                </th>
+                  </Style.Section>
+                </Style.TH>
               ))}
-              <th scope="col" className="px-6 py-3">
-                <span className="sr-only">Action</span>
-              </th>
-            </tr>
-          </thead>
-          <tbody>
+              <Style.TH scope="col" sx="px-6 py-3">
+                <Style.Span sx="sr-only">Action</Style.Span>
+              </Style.TH>
+            </Style.TR>
+          </Style.THead>
+
+          <Style.TBody>
             <>
               {loading ? (
-                <tr>
-                  <td colSpan="7">Loading...</td>
-                </tr>
+                <Style.TR>
+                    <Style.Text>loading...</Style.Text>
+                </Style.TR>
               ) : error ? (
-                <tr>
-                  <td colSpan="7">Error: {error}</td>
-                </tr>
+                <Style.TR>
+                    <Style.Text>{error}</Style.Text>
+                </Style.TR>
               ) : (
                 <>
                   {currentItems?.map((item, id) => (
-                    <tr className="bg-white text-[#545F7D relative" key={id}>
-                      <th
+                    <Style.TR sx="bg-white text-[#545F7D relative" key={id}>
+                      <Style.TH
                         scope="row"
-                        className="px-4 py-4 font-medium whitespace-nowrap ellipsis"
+                        sx="px-4 py-4 font-medium whitespace-nowrap ellipsis"
                       >
                         {item.orgName.length > 10
                           ? item.orgName.slice(0, 10) + "..."
                           : item.orgName}
-                      </th>
-                      <td className="px-4 py-4 ellipsis">{item.userName}</td>
-                      <td className="px-4 py-4 ellipsis">{item.email}</td>
-                      <td className="px-4 py-4 ellipsis">{item.phoneNumber}</td>
-                      <td className="px-4 py-4 ellipsis">
+                      </Style.TH>
+                      <Style.TD sx="px-4 py-4 ellipsis">{item.userName}</Style.TD>
+                      <Style.TD sx="px-4 py-4 ellipsis">{item.email}</Style.TD>
+                      <Style.TD sx="px-4 py-4 ellipsis">{item.phoneNumber}</Style.TD>
+                      <Style.TD sx="px-4 py-4 ellipsis">
                         {item.createdAt.length > 10
                           ? item.createdAt.slice(0, 10) + "..."
                           : item.createdAt}
-                      </td>
-                      <td
-                        className={`px-4 py-4 ellipsis items-center status__before__content ${
+                      </Style.TD>
+                      <Style.TD
+                        sx={`px-4 py-4 ellipsis items-center status__before__content ${
                           getStatus(item).toString().toLowerCase() === "active"
                             ? "active"
                             : getStatus(item) === "blacklisted"
@@ -114,45 +120,45 @@ const Table = () => {
                         }`}
                       >
                         {getStatus(item)}
-                      </td>
-                      <td className="px-4 py-4 text-right">
+                      </Style.TD>
+                      <Style.TD sx="px-4 py-4 text-right">
                         <Icons.LendqsrMore
-                          className="cursor-pointer"
+                          sx="cursor-pointer"
                           onClick={() => setIsVisible(item.id)}
                         />
 
                         {isVisible === item.id && (
-                          <div className="p-3 absolute top-0 right-9 bg-white rounded-md shadow-md items-start text-left z-50">
-                            <div className="flex flex-col space-y-2 items-start text-left">
-                              <p
+                          <Style.Wrapper sx="p-3 absolute top-0 right-9 bg-white rounded-md shadow-md items-start text-left z-50">
+                            <Style.Section sx="flex flex-col space-y-2 items-start text-left">
+                              <Style.Text
                                 onClick={() =>
                                   navigate(`/dashboard/user/${item.id}`)
                                 }
-                                className="cursor-pointer"
+                                sx="cursor-pointer"
                               >
                                 View Details
-                              </p>
-                              <p className="cursor-pointer activate">
+                              </Style.Text>
+                              <Style.Text sx="cursor-pointer activate">
                                 Activate User
-                              </p>
-                              <p className="cursor-pointer blacklist">
+                              </Style.Text>
+                              <Style.Text sx="cursor-pointer blacklist">
                                 Blacklist User
-                              </p>
-                            </div>
-                          </div>
+                              </Style.Text>
+                            </Style.Section>
+                          </Style.Wrapper>
                         )}
-                      </td>
-                    </tr>
+                      </Style.TD>
+                    </Style.TR>
                   ))}
                 </>
               )}
             </>
-          </tbody>
-        </table>
-      </div>
+          </Style.TBody>
+        </Style.Table>
+      </Style.Wrapper>
 
       <Pagination
-      currentPage={currentPage}
+        currentPage={currentPage}
         itemsPerPage={itemsPerPage}
         totalItems={user?.length}
         onPageChange={handlePageChange}

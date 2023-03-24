@@ -5,13 +5,15 @@ import { Toaster } from "react-hot-toast"
 
 
 const LendQsrRoute = () => {
+ 
+
   return (
     <>
         <Router>
             <Routes>
-                <Route path='/' exact index element={<LoginPage />} />
-                  <Route path='/dashboard/user' exact index element={<DashboardOverview />} />
-                  <Route path='/dashboard/user/:id' exact index element={<UserDetailsDashboard />} />
+                <Route path='/' exact index element={<LoginPage/>} />
+                <Route path="/dashboard/user" element={<DashboardOverview />}  />
+                <Route path="/dashboard/user/:id" element={<UserDetailsDashboard />} />
             </Routes>
             <Toaster />
         </Router>

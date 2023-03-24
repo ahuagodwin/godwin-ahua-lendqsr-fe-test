@@ -1,4 +1,21 @@
 
+.pagination__wrapper {
+    @apply flex justify-between items-center py-3
+}
+
+.pagination__wrapper p {
+    @apply text-gray-500 flex items-center gap-2 lowercase;
+}
+
+.pagination__wrapper__button {
+    @apply flex items-center justify-center gap-3;
+}
+
+
+
+
+
+/* PAGINATION BUTTONS */
 
 .active__page {
     color: var(--lendqsr-app);

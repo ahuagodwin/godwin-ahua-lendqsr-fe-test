@@ -9,8 +9,16 @@ import { toast } from "react-hot-toast";
 
 const Login = () => {
   const [isLoading, setIsLoading] = useState(false);
+  const [isPasswordShow, setIsPasswordShow] = useState(false);
   const navigate = useNavigate();
 
+
+  // to should the password input
+  const handleShowPassword =() => {
+    setIsPasswordShow(!isPasswordShow);
+  }
+
+  // to handle the form input
   const formik = useFormik({
     initialValues: {
       email: "godwincahua@gmail.com",
@@ -23,11 +31,20 @@ const Login = () => {
     setIsLoading(true);
     e.preventDefault();
     const { email, password } = formik.values;
+
+    // Checking if any input field is empty
+    if (!email || !password) {
+      toast.error("Please fill in all fields.");
+      setIsLoading(false);
+      return;
+    }
+
     if (email === "godwincahua@gmail.com" && password === "password") {
-      // If email and password match the default values, navigate to dashboard and display success message
+      // If email and password match the default values, navigate to dashboard and display success message  
       toast.success("Login successful!");
       navigate("/dashboard/user");
       setIsLoading(false);
+  
     } else {
       // If email and password do not match the default values, display error message
       toast.error("Please check your email and password.");
@@ -51,16 +68,38 @@ const Login = () => {
             <Style.Text>Enter details to login</Style.Text>
 
             <Style.Section sx="auth__login__wrapper">
-              <Style.Input type="email" name="email" {...formik.getFieldProps("email")} />
-              {formik.touched.email && formik.errors.email && (
+              <Style.Input
+                type="email"
+                name="email"
+                value={formik.values.email}
+                onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
+              />
+              <Style.Span sx="error">{formik.touched.email && formik.errors.email && (
                 <div>{formik.errors.email}</div>
-              )}
-              <Style.Input type="password" name="password" {...formik.getFieldProps("password")} />
-              {formik.touched.password && formik.errors.password && (
+              )}</Style.Span>
+
+              <Style.Wrapper sx="auth__password__wrapper">
+              <Style.Input
+                type={isPasswordShow ? "text" : "password"}
+                name="password"
+                value={formik.values.password}
+                onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
+                sx="border-none"
+              />
+              <Style.Span sx='relative cursor-pointer px-3' onClick={handleShowPassword}>
+                  {isPasswordShow ? <Icons.PasswordHide className="show__password"/> : <Icons.PasswordShow  className="show__password"/>}
+              </Style.Span>
+              </Style.Wrapper>
+              <Style.Span sx="error">{formik.touched.password && formik.errors.password && (
                 <div>{formik.errors.password}</div>
-              )}
+              )}</Style.Span>
+
               <Style.Text>Forgot Password?</Style.Text>
+
             </Style.Section>
+
             <Style.Button type="submit" name="Login" isLoading={isLoading} />
           </Style.Form>
         </Style.Wrapper>

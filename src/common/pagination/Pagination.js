@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Icons } from "../../constant/Icons";
 import { Style } from "../styled/Styled";
 
@@ -9,7 +9,7 @@ const Pagination = ({
   onChangeItemsPerPage,
 }) => {
   const totalPages = Math.ceil(totalItems / itemsPerPage);
-  const [currentPage, setCurrentPage] = React.useState(1);
+  const [currentPage, setCurrentPage] = useState(1);
 
   const nextPage = () => {
     if (currentPage < totalPages) {
@@ -41,7 +41,7 @@ const Pagination = ({
       pageButtons.push(
         <button
           key={1}
-          className={`px-3 py-2 border inactive__page`}
+          className={`p-3 inactive__page`}
           onClick={() => goToPage(1)}
         >
           {1}
@@ -54,7 +54,7 @@ const Pagination = ({
       pageButtons.push(
         <button
           key={'leftEllipsis'}
-          className={`px-3 py-2 border inactive__page`}
+          className={`p-3 inactive__page`}
           onClick={() => goToPage(currentPage - 2)}
         >
           {'...'}
@@ -84,7 +84,7 @@ const Pagination = ({
       pageButtons.push(
         <button
           key={'rightEllipsis'}
-          className={`px-3 py-2 border inactive__page`}
+          className={`p-3 inactive__page`}
           onClick={() => goToPage(currentPage + 2)}
         >
           {'...'}
@@ -97,7 +97,7 @@ const Pagination = ({
       pageButtons.push(
         <button
           key={totalPages}
-          className={`px-3 py-2 border inactive__page`}
+          className={`p-3 inactive__page`}
           onClick={() => goToPage(totalPages)}
         >
           {totalPages}
@@ -110,22 +110,22 @@ const Pagination = ({
   
 
   return (
-    <Style.Wrapper sx="flex justify-between items-center py-3">
-      <p className="text-gray-500 flex items-center gap-2 lowercase">
+    <Style.Wrapper sx="pagination__wrapper">
+      <Style.Text>
         <Style.Span> Showing </Style.Span>
         <Style.Select
           sx="paginate__showing"
           value={itemsPerPage}
-        onChange={(e) => onChangeItemsPerPage(parseInt(e.target.value))}
+          onChange={(e) => onChangeItemsPerPage(parseInt(e.target.value))}
         >
           <option value={10}>10</option>
-    <option value={20}>20</option>
-    <option value={50}>50</option>
+          <option value={20}>20</option>
+          <option value={50}>50</option>
         </Style.Select>
         <Style.Span> of {totalPages}</Style.Span>
-      </p>
+      </Style.Text>
 
-      <div className="flex items-center justify-center space-x-2">
+      <Style.Section sx="pagination__wrapper__button">
         <button
           className={`p-3 ${
             currentPage === 1 ? "inactive__button" : "active__button"
@@ -138,16 +138,14 @@ const Pagination = ({
         {renderPageButtons()}
         <button
           className={`p-3 ${
-            currentPage === totalPages
-              ? "inactive__button"
-              : "active__button"
+            currentPage === totalPages ? "inactive__button" : "active__button"
           }`}
           onClick={nextPage}
           disabled={currentPage === totalPages}
         >
           <Icons.NextIcon />
         </button>
-      </div>
+      </Style.Section>
     </Style.Wrapper>
   );
 };

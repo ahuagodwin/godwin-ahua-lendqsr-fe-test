@@ -11,7 +11,13 @@ import {
   Form,
   Span,
   Card,
-  Select
+  Select,
+  TBody,
+  TD,
+  TH,
+  THead,
+  TR,
+  Table,
 } from "./styled-component";
 
 export const Style = {
@@ -25,5 +31,11 @@ export const Style = {
   Form,
   Span,
   Card,
-  Select
+  Select,
+  TBody,
+  TD,
+  TH,
+  THead,
+  TR,
+  Table,
 };

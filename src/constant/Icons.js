@@ -20,8 +20,8 @@ import {
 
 import { ImSpinner9 as Spinner } from "react-icons/im";
 
-import { MdOutlineNavigateNext as NextIcon } from "react-icons/md";
-import { MdKeyboardArrowLeft as PrevIcon } from "react-icons/md";
+import { MdOutlineNavigateNext as NextIcon, MdKeyboardArrowLeft as PrevIcon } from "react-icons/md";
+import { BsFillLockFill as PasswordShow, BsFillUnlockFill as PasswordHide } from "react-icons/bs";
 
 
 
@@ -46,4 +46,6 @@ export const Icons = {
   LendqsrArrowLeft,
   NextIcon,
   PrevIcon,
+  PasswordShow,
+  PasswordHide,
 }

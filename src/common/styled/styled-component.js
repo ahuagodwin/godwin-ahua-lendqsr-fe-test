@@ -58,7 +58,7 @@ export const Text = (props) => {
 
 export const Span = (props) => {
     return (
-        <span className={props.sx}>{props.children}</span>
+        <span className={props.sx} onClick={props.onClick}>{props.children}</span>
     )
 }
 
@@ -66,11 +66,13 @@ export const Span = (props) => {
 export const Input = (props) => {
     return (
       <input
-        type={props.type ?? undefined}
-        onClick={props.onClick ?? undefined}
-        onChange={props.onChange ?? undefined}
+        type={props.type?? undefined}
+        onClick={props.onClick?? undefined}
+        onChange={props.onChange}
         name={props.name ?? undefined}
         id={props.id ?? undefined}
+        onBlur={props.onBlur}
+        value={props.value}
         placeholder={props.name ?? undefined}
         className={`auth__layout__input ${props.sx}`}
       />
@@ -96,5 +98,42 @@ export const Button = (props) => {
 export const Form = (props) => {
     return (
         <form onSubmit={props.onSubmit} className={props.sx}>{props.children}</form>
+    )
+}
+
+
+export const Table = (props) => {
+    return (
+        <table className={props.sx} onClick={props.onClick} id={props.id} onChange={props.onChange} key={props.key}>{props.children}</table>
+    )
+}
+
+export const TR = (props) => {
+    return (
+        <tr className={props.sx} onClick={props.onClick} id={props.id} onChange={props.onChange} key={props.key}>{props.children}</tr>
+    )
+}
+
+export const TD = (props) => {
+    return (
+        <td className={props.sx} onClick={props.onClick} id={props.id} onChange={props.onChange} key={props.key}>{props.children}</td>
+    )
+}
+
+export const TBody = (props) => {
+    return (
+        <tbody className={props.sx} onClick={props.onClick} id={props.id} onChange={props.onChange} key={props.key} >{props.children}</tbody>
+    )
+}
+
+export const THead = (props) => {
+    return (
+        <thead className={props.sx} onClick={props.onClick} id={props.id} onChange={props.onChange} key={props.key}>{props.children}</thead>
+    )
+}
+
+export const TH = (props) => {
+    return (
+        <th className={props.sx} onClick={props.onClick} id={props.id} onChange={props.onChange} key={props.key} scope={props.scope}>{props.children}</th>
     )
 }

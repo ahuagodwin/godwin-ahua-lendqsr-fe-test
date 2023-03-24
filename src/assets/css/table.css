@@ -4,6 +4,6 @@
     color: var(--lendqsr-secondary);
 }
 
-.blacklist {
+.blacklist, .error {
     color: var(--lendqsr-blacklist);
 }
