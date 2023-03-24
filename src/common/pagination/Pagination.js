@@ -115,9 +115,12 @@ const Pagination = ({
         <Style.Span> Showing </Style.Span>
         <Style.Select
           sx="paginate__showing"
-          onChange={(e) => onChangeItemsPerPage(e.target.value)}
+          value={itemsPerPage}
+        onChange={(e) => onChangeItemsPerPage(parseInt(e.target.value))}
         >
-          <option defaultValue>{itemsPerPage}</option>
+          <option value={10}>10</option>
+    <option value={20}>20</option>
+    <option value={50}>50</option>
         </Style.Select>
         <Style.Span> of {totalPages}</Style.Span>
       </p>

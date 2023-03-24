@@ -12,9 +12,10 @@ const Table = () => {
   const dispatch = useDispatch();
   const { loading, user, error } = useSelector(selectUser);
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 10;
+  const [itemsPerPage, setItemsPerPage] = useState(10); // Define itemsPerPage state
 
   const navigate = useNavigate();
+
 
   useEffect(() => {
     dispatch(fetchAdminUser());
@@ -42,6 +43,10 @@ const Table = () => {
 
   const handlePageChange = (pageNumber) => {
     setCurrentPage(pageNumber);
+  };
+
+  const handleItemsPerPageChange = (itemsPerPage) => { // Define handleItemsPerPageChange function
+    setItemsPerPage(itemsPerPage);
   };
 
   return (
@@ -151,6 +156,7 @@ const Table = () => {
         itemsPerPage={itemsPerPage}
         totalItems={user?.length}
         onPageChange={handlePageChange}
+        onChangeItemsPerPage={handleItemsPerPageChange}
       />
     </>
   );
