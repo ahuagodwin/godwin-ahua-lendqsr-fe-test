@@ -4,7 +4,7 @@ export const dahsboard = [
     {
         dahsboard: [
           {
-            icons: <Icons.LendqsrDashboard />,
+            icons: <Icons.LendqsrSwitch />,
             name: "Switch Organization",
             path: "#",
             arrow: <Icons.LendqsrDropDown />,
@@ -24,24 +24,24 @@ export const dahsboard = [
     label: "Customer",
     dahsboard: [
       {
-        icons: <Icons.LendqsrDashboard />,
+        icons: <Icons.LendqsrUser />,
         name: "User",
         path: "/dashboard/user",
       },
       {
-        icons: <Icons.LendqsrDashboard />,
+        icons: <Icons.LendqsrGuarantor />,
         name: "Guarantor",
-        path: "/dashboard/guarantor",
+        path: "#",
       },
       {
-        icons: <Icons.LendqsrDashboard />,
+        icons: <Icons.LendqsrLoan />,
         name: "Loan",
-        path: "/dashboard/loan",
+        path: "#",
       },
       {
-        icons: <Icons.LendqsrDashboard />,
+        icons: <Icons.LendsqrDecModel />,
         name: "Decision Models",
-        path: "/dashboard/decision-models",
+        path: "#",
       },
     ],
   },
@@ -50,20 +50,77 @@ export const dahsboard = [
     label: "Businesses",
     dahsboard: [
       {
-        icons: <Icons.LendqsrDashboard />,
+        icons: <Icons.LendqsrSwitch />,
         name: "Organization",
         path: "#",
       },
 
       {
-        icons: <Icons.LendqsrDashboard />,
+        icons: <Icons.LendqsrLoanRequest />,
         name: "Loan Product",
         path: "#",
       },
 
       {
-        icons: <Icons.LendqsrDashboard />,
+        icons: <Icons.LendqsrSavingProduct />,
         name: "Saving Product",
+        path: "#",
+      },
+
+      {
+        icons: <Icons.LendqsrFeesCharged />,
+        name: "Fees and Charges",
+        path: "#",
+      },
+
+      {
+        icons: <Icons.LendqsrTransaction />,
+        name: "Transaction",
+        path: "#",
+      },
+
+      {
+        icons: <Icons.LendqsrServices />,
+        name: "Services",
+        path: "#",
+      },
+
+      {
+        icons: <Icons.LendqsrServiceAccount />,
+        name: "Service Account",
+        path: "#",
+      },
+
+      {
+        icons: <Icons.LendqsrSettlement />,
+        name: "Settlement",
+        path: "#",
+      },
+
+      {
+        icons: <Icons.LendqsrReport />,
+        name: "Report",
+        path: "#",
+      },
+    ],
+  },
+
+  {
+    label: "Settings",
+    dahsboard: [
+      {
+        icons: <Icons.LendqsrPreference />,
+        name: "Preferences",
+        path: "#",
+      },
+      {
+        icons: <Icons.LendqsrFeesPricing />,
+        name: "Fees and Pricing",
+        path: "#",
+      },
+      {
+        icons: <Icons.LendqsrAuditLog />,
+        name: "Audit Log",
         path: "#",
       },
     ],

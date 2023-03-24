@@ -1,7 +1,7 @@
 
 
 .sidebar {
-    @apply h-screen w-0 lg:w-[250px] pl-2 fixed left-0;
+    @apply h-screen w-0 lg:w-[255px] pl-2 fixed left-0 pt-5 pb-20;
     background-color: var(--lendqsr-app);
 }
 
@@ -24,7 +24,7 @@
 }
 
 .sidebar__path__item p:nth-child(1) {
-    @apply flex justify-start items-center px-5;
+    @apply flex justify-start items-center px-5 uppercase;
     color: var(--lendqsr-primary);
 }
 
@@ -47,4 +47,23 @@
 
 .layout__main span {
     @apply capitalize;
+}
+
+
+
+/* logout  */
+.logout__wrapper {
+    @apply px-5 border-t border-t-[#213F7D] border-opacity-[0.1] py-5;
+}
+
+.logout__wrapper p {
+    @apply flex items-center gap-2;
+    color: var(--lendqsr-primary);
+    font-family: var(--lendqsr-work-san)
+}
+
+.logout__wrapper span {
+    @apply pt-5;
+    font-size: 12px;
+    font-family: var(--lendqsr-work-san);
 }

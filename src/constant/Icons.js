@@ -16,12 +16,31 @@ import {
   LendqsrUserAvatar,
   LendqsrUserRating,
   LendqsrArrowLeft,
+  LendqsrAuditLog,
+  LendqsrFeesCharged,
+  LendqsrFeesPricing,
+  LendqsrGuarantor,
+  LendqsrKarma,
+  LendqsrLoan,
+  LendqsrLoanRequest,
+  LendqsrLogout,
+  LendqsrPreference,
+  LendqsrReport,
+  LendqsrSaving,
+  LendqsrSavingProduct,
+  LendqsrServiceAccount,
+  LendqsrServices,
+  LendqsrSettlement,
+  LendqsrTransaction,
+  LendqsrWhiteList,
+  LendsqrDecModel,
 } from "../assets/icons/Icons";
 
 import { ImSpinner9 as Spinner } from "react-icons/im";
 
 import { MdOutlineNavigateNext as NextIcon, MdKeyboardArrowLeft as PrevIcon } from "react-icons/md";
 import { BsFillLockFill as PasswordShow, BsFillUnlockFill as PasswordHide } from "react-icons/bs";
+import { FaUserFriends as LendqsrUser } from "react-icons/fa";
 
 
 
@@ -48,4 +67,23 @@ export const Icons = {
   PrevIcon,
   PasswordShow,
   PasswordHide,
+  LendqsrAuditLog,
+  LendqsrFeesCharged,
+  LendqsrFeesPricing,
+  LendqsrGuarantor,
+  LendqsrKarma,
+  LendqsrLoan,
+  LendqsrLoanRequest,
+  LendqsrLogout,
+  LendqsrPreference,
+  LendqsrReport,
+  LendqsrSaving,
+  LendqsrSavingProduct,
+  LendqsrServiceAccount,
+  LendqsrServices,
+  LendqsrSettlement,
+  LendqsrTransaction,
+  LendqsrWhiteList,
+  LendsqrDecModel,
+  LendqsrUser
 }

@@ -2,12 +2,13 @@ import React from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import { dahsboard } from "../../common/data/data";
 import { Style } from "../../common/styled/Styled";
+import { Icons } from "../../constant/Icons";
 
 const Sidebar = () => {
   const location = useLocation();
   return (
     <>
-      <Style.Wrapper sx="sidebar">
+      <Style.Wrapper sx="sidebar overflow-y-auto">
         <>
           {dahsboard.map((item, i) => (
             <Style.Section key={i} sx="sidebar__path__item">
@@ -29,6 +30,12 @@ const Sidebar = () => {
               ))}
             </Style.Section>
           ))}
+
+          <Style.Wrapper sx="logout__wrapper">
+                <Style.Text sx="flex items-center gap-2"> <Icons.LendqsrLogout /> Logout</Style.Text>
+                <Style.Span>V1.2.0</Style.Span>
+          </Style.Wrapper>
+
         </>
       </Style.Wrapper>
     </>
