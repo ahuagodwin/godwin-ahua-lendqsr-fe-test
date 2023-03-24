@@ -20,6 +20,9 @@ import {
 
 import { ImSpinner9 as Spinner } from "react-icons/im";
 
+import { MdOutlineNavigateNext as NextIcon } from "react-icons/md";
+import { MdKeyboardArrowLeft as PrevIcon } from "react-icons/md";
+
 
 
 export const Icons = {
@@ -41,4 +44,6 @@ export const Icons = {
   LendqsrUserAvatar,
   LendqsrUserRating,
   LendqsrArrowLeft,
+  NextIcon,
+  PrevIcon,
 }

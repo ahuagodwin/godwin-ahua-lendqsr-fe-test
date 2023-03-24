@@ -14,7 +14,7 @@ const DashboardLayout = (props) => {
         <Style.Wrapper sx="layout__wrapper">
             <Style.Wrapper sx="layout__wrapper__sidebar mt-[5rem]"> <Sidebar /></Style.Wrapper>
           <Style.Section sx="layout__main">
-             <Style.Span> <Link to={props.path} className="flex items-center gap-2 w-36"> {props.icon} {window.location.pathname === "/dashboard" ? "Overview" : window.location.pathname.split("/")[2]}</Link></Style.Span>
+             <Style.Span> <Link to={props.path?? undefined} className="flex items-center gap-2 w-36"> {props.icon?? undefined} {window.location.pathname === "/dashboard" ? "Overview" : window.location.pathname.split("/")[2]}</Link></Style.Span>
             <Style.Wrapper>
                 {props.children}
             </Style.Wrapper>

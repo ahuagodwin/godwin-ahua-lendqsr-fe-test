@@ -22,7 +22,7 @@
 
 .user__card__wrapper {
     background: var(--lendqsr-app);
-    @apply block sm:flex md:flex lg:flex justify-between items-center p-5 my-4 space-y-5 lg:space-y-0;
+    @apply block sm:flex md:flex lg:flex justify-center sm:justify-between md:justify-between lg:justify-between items-center p-5 my-4 space-y-5 lg:space-y-0;
 }
 
 
@@ -49,7 +49,7 @@
 /* USER CARD TAB */
 .user__card__tab {
     background-color: var(--lendqsr-app);
-    @apply block sm:flex md:flex lg:flex justify-between items-center p-4 gap-5;
+    @apply grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 p-4 gap-4;
 }
 
 .user__card__tab p:nth-child(1) {
@@ -80,7 +80,7 @@
 }
 
 .user__person__card {
-    @apply block sm:flex md:flex lg:flex justify-between items-center py-3
+    @apply grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 py-3
 }
 
 .user__person__card p {

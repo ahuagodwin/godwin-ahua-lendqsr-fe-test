@@ -12,8 +12,7 @@
 }
 
 .navbar__search__input input {
-    @apply p-2 w-full border-opacity-[15%] rounded-l-md rounded-bl-md rounded-tr-none rounded-br-none;
-    border: 1px solid var(--lendqsr-primary);
+    @apply p-2 w-full border border-[#545F7D] border-opacity-[15%] rounded-l-md rounded-bl-md rounded-tr-none rounded-br-none;
 }
 
 .navbar__search__input span{

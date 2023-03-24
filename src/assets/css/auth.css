@@ -22,7 +22,8 @@
 /* right */
 
 .auth__layout__right {
-    @apply w-full lg:w-[50%] flex flex-col justify-center items-start p-10 lg:py-20 lg:pl-20 lg:pr-36 h-screen
+    @apply w-full lg:w-[50%] flex flex-col justify-center items-start p-10 lg:py-20 lg:pl-20 lg:pr-36 h-screen;
+    background-color: var(--lendqsr-app);
 }
 
 .auth__layout__right p:nth-child(1) {
@@ -45,9 +46,8 @@
 }
 
 .auth__layout__input {
-    border: 2px solid var(--lendqsr-login);
-    opacity: 15%;
-    @apply p-3 w-full rounded-md focus:outline-none;
+    @apply p-3 w-full rounded-md focus:outline-none border-2 border-[#545F7D] border-opacity-[15%];
+    color: var(--lendqsr-primary);
 }
 
 .auth__layout__input::placeholder {

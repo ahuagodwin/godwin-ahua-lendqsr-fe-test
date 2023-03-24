@@ -23,6 +23,19 @@ export const Section = (props) => {
 };
 
 
+export const Select = (props) => {
+    return (
+        <select className={props.sx}
+            name={props.name}
+            id={props.id}
+            onChange={props.onChange}
+            defaultValue={props.defaultValue}
+        >
+            {props.children}
+        </select>
+    )
+}
+
 export const Card = (props) => {
     return (
         <div className={`${props.sx}`}>{props.children}</div>

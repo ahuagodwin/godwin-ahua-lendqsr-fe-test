@@ -11,6 +11,7 @@ import {
   Form,
   Span,
   Card,
+  Select
 } from "./styled-component";
 
 export const Style = {
@@ -24,4 +25,5 @@ export const Style = {
   Form,
   Span,
   Card,
+  Select
 };

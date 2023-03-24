@@ -1,0 +1,9 @@
+
+
+.activate {
+    color: var(--lendqsr-secondary);
+}
+
+.blacklist {
+    color: var(--lendqsr-blacklist);
+}

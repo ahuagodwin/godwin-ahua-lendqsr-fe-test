@@ -5,18 +5,20 @@ import { table_head } from "../../common/data/data";
 import { Style } from "../../common/styled/Styled";
 import { Icons } from "../../constant/Icons";
 import { fetchAdminUser, selectUser } from "../../state/slice/User-Slice";
+import Pagination from "../../common/pagination/Pagination";
 
 const Table = () => {
   const [isVisible, setIsVisible] = useState(false);
   const dispatch = useDispatch();
   const { loading, user, error } = useSelector(selectUser);
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 10;
 
   const navigate = useNavigate();
 
   useEffect(() => {
     dispatch(fetchAdminUser());
   }, [dispatch]);
-
 
   const getStatus = (user) => {
     const createdAt = new Date(user.createdAt);
@@ -34,6 +36,13 @@ const Table = () => {
     }
   };
 
+  const indexOfLastItem = currentPage * itemsPerPage;
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+  const currentItems = user?.slice(indexOfFirstItem, indexOfLastItem);
+
+  const handlePageChange = (pageNumber) => {
+    setCurrentPage(pageNumber);
+  };
 
   return (
     <>
@@ -68,7 +77,7 @@ const Table = () => {
                 </tr>
               ) : (
                 <>
-                  {user?.slice(0, 10).map((item, id) => (
+                  {currentItems?.map((item, id) => (
                     <tr className="bg-white text-[#545F7D relative" key={id}>
                       <th
                         scope="row"
@@ -110,9 +119,20 @@ const Table = () => {
                         {isVisible === item.id && (
                           <div className="p-3 absolute top-0 right-9 bg-white rounded-md shadow-md items-start text-left z-50">
                             <div className="flex flex-col space-y-2 items-start text-left">
-                              <p onClick={() => navigate(`/dashboard/user/${item.id}`)} className="cursor-pointer">View Details</p>
-                              <p className="cursor-pointer">Activate User</p>
-                              <p className="cursor-pointer">Blacklist User</p>
+                              <p
+                                onClick={() =>
+                                  navigate(`/dashboard/user/${item.id}`)
+                                }
+                                className="cursor-pointer"
+                              >
+                                View Details
+                              </p>
+                              <p className="cursor-pointer activate">
+                                Activate User
+                              </p>
+                              <p className="cursor-pointer blacklist">
+                                Blacklist User
+                              </p>
                             </div>
                           </div>
                         )}
@@ -125,6 +145,13 @@ const Table = () => {
           </tbody>
         </table>
       </div>
+
+      <Pagination
+      currentPage={currentPage}
+        itemsPerPage={itemsPerPage}
+        totalItems={user?.length}
+        onPageChange={handlePageChange}
+      />
     </>
   );
 };

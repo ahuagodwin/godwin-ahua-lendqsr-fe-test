@@ -30,6 +30,9 @@
     --lendqsr-secondary: #39CDCC;
     --lendqsr-login: #545F7D;
     --lendqsr-layout-main: #E5E5E5;
+    --lendqsr-blacklist: #E4033B;
+    --lendqsr-success: #39CD62;
+    --lendqsr-pending: #E9B200;
 }
 
 
@@ -77,18 +80,18 @@ body {
 .status__before__content.active::before,
 .status__before__content.enabled::before,
 .status__before__content.online::before {
-    background-color: #39CD62;
+    background-color: var(--lendqsr-success)
 }
 
 .status__before__content.failed::before,
 .status__before__content.blacklisted::before {
-    background-color: #E4033B;
+    background-color: var(--lendqsr-blacklist);
 }
 
 .status__before__content.pending::before {
-    background-color: #E9B200;
+    background-color: var(--lendqsr-pending)
 }
 
 .status__before__content.Inactive::before {
-    background-color: #545F7D;
+    background-color: var(--lendqsr-login)
 }

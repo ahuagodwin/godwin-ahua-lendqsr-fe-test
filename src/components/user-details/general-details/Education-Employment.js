@@ -20,7 +20,7 @@ const EducationEmployment = () => {
 
   return (
    <>
-    {loading ? (<Loader />) : error ? (<div>Error {error}</div>) : (
+    {loading ? (<div><Loader /></div>) : error ? (<div>Error {error}</div>) : (
          <Style.Wrapper sx="border-b border-[#213F7D] border-opacity-[0.1] mb-3">
          <Style.Text sx="card__caption">Education and Employment</Style.Text>
          <Style.Section sx="user__person__card">

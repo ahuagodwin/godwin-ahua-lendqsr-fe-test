@@ -20,7 +20,7 @@ const Guarantor = () => {
   return (
     <>
       {loading ? (
-        <Loader />
+       <div> <Loader /></div>
       ) : error ? (
         <div>Error: {error}</div>
       ) : (
