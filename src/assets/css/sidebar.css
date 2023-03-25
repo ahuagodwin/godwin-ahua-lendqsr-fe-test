@@ -59,7 +59,8 @@
 .logout__wrapper p {
     @apply flex items-center gap-2;
     color: var(--lendqsr-primary);
-    font-family: var(--lendqsr-work-san)
+    font-family: var(--lendqsr-work-san);
+    cursor: pointer;
 }
 
 .logout__wrapper span {

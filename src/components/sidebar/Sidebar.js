@@ -1,11 +1,18 @@
 import React from "react";
-import { NavLink, useLocation } from "react-router-dom";
+import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import { dahsboard } from "../../common/data/data";
 import { Style } from "../../common/styled/Styled";
 import { Icons } from "../../constant/Icons";
 
 const Sidebar = () => {
   const location = useLocation();
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    // Redirect the user to the home page on logout
+    navigate("/");
+  };
+
   return (
     <>
       <Style.Wrapper sx="sidebar overflow-y-auto">
@@ -32,7 +39,7 @@ const Sidebar = () => {
           ))}
 
           <Style.Wrapper sx="logout__wrapper">
-                <Style.Text sx="flex items-center gap-2"> <Icons.LendqsrLogout /> Logout</Style.Text>
+                <Style.Text onClick={handleLogout}> <Icons.LendqsrLogout /> Logout</Style.Text>
                 <Style.Span>V1.2.0</Style.Span>
           </Style.Wrapper>
 
