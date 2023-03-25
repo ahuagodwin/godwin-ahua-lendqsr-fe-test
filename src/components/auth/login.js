@@ -12,7 +12,7 @@ const Login = () => {
   const [isPasswordShow, setIsPasswordShow] = useState(false);
   const navigate = useNavigate();
 
-
+  
   // to should the password input
   const handleShowPassword =() => {
     setIsPasswordShow(!isPasswordShow);
