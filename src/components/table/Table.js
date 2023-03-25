@@ -80,9 +80,7 @@ const Table = () => {
           <Style.TBody>
             <>
               {loading ? (
-                <Style.TR>
-                    <Style.Text>loading...</Style.Text>
-                </Style.TR>
+                    <Style.Text sx="loading__spinner"><Icons.Spinner /></Style.Text>
               ) : error ? (
                 <Style.TR>
                     <Style.Text>{error}</Style.Text>

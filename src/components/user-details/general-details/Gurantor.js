@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import Loader from "../../../common/loader/Loader";
 import { Style } from "../../../common/styled/Styled";
 import {
   fetchAdminUserById,
@@ -20,7 +19,7 @@ const Guarantor = () => {
   return (
     <>
       {loading ? (
-       <div> <Loader /></div>
+       <div></div>
       ) : error ? (
         <div>Error: {error}</div>
       ) : (

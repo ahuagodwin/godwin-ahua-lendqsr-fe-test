@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom'
-import Loader from '../../../common/loader/Loader';
 import { Style } from '../../../common/styled/Styled'
+import { Icons } from '../../../constant/Icons';
 import { fetchAdminUserById, selectUser } from '../../../state/slice/User-Slice';
 
 const PersonalInformation = () => {
@@ -17,7 +17,7 @@ const PersonalInformation = () => {
 
   return (
    <>
-     {loading ? (<div><Loader /></div>) : error ? (<div>Error {error}</div>) : (
+     {loading ? (<Style.Text sx="loading__spinner__user__details"><Icons.Spinner /></Style.Text>) : error ? (<div>Error {error}</div>) : (
             <Style.Wrapper sx="border-b border-[#213F7D] border-opacity-[0.1] mb-3">
             <Style.Text sx="card__caption">Personal Information</Style.Text>
         <Style.Section sx="user__person__card">

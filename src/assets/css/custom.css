@@ -95,3 +95,15 @@ body {
 .status__before__content.Inactive::before {
     background-color: var(--lendqsr-login)
 }
+
+
+.loading__spinner {
+    @apply flex justify-center items-center animate-spin ml-[30rem] my-10 text-[35px];
+    color: var(--lendqsr-primary);
+}
+
+
+.loading__spinner__user__details {
+    @apply flex justify-center items-center animate-spin my-10 text-[35px];
+    color: var(--lendqsr-primary);
+}
