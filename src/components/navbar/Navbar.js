@@ -1,13 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import { Style } from "../../common/styled/Styled";
 import { Icons } from "../../constant/Icons";
 import { Images } from "../../assets/import";
+import Sidebar from "../sidebar/Sidebar";
 
 const Navbar = () => {
+  const [ isOpen, setIsOpen ] = useState(false);
+
+  const handleOpenMenu = () => {
+    setIsOpen(!isOpen);
+  }
+
   return (
     <>
-      <Style.Wrapper sx="navbar__wrapper">
+      <Style.Wrapper sx="navbar__wrapper bg-white">
         <Style.Wrapper sx="navbar__left__wrapper">
+          {isOpen ? <Icons.LendqsrMenuClose onClick={handleOpenMenu} className="menuClose" title="close menu" /> :
+          <Icons.LendqsrMenuIcon onClick={handleOpenMenu} className="menuOpen" title="open menu" />}
+
           <Icons.LendqsrDashboardLogo
             width="145"
             height="30"
@@ -37,6 +47,12 @@ const Navbar = () => {
           </Style.Section>
         </Style.Wrapper>
       </Style.Wrapper>
+
+      {isOpen && (
+          <Style.Wrapper sx="block sm:block md:block lg:hidden">
+              <Sidebar />
+          </Style.Wrapper>
+        )}
     </>
   );
 };

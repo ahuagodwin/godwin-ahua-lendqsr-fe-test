@@ -1,7 +1,7 @@
 
 
 .sidebar {
-    @apply h-screen w-0 lg:w-[255px] pl-2 fixed left-0 pt-5 pb-20;
+    @apply h-screen w-[255px] pl-2 fixed left-0 pt-5 pb-20;
     background-color: var(--lendqsr-app);
 }
 

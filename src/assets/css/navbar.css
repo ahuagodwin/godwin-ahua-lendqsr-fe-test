@@ -1,7 +1,6 @@
 
 .navbar__bg {
     @apply fixed w-full z-20;
-    background-color: var(--lendqsr-app);
     box-shadow: 3px 0px 20px rgba(0, 0, 0, 0.04);
 }
 
@@ -46,4 +45,15 @@
 
 .navbar__right__wrapper p:nth-child(1), .navbar__right__wrapper svg:nth-child(2) {
     @apply hidden lg:block
+}
+
+.menuClose {
+    @apply block sm:block md:block lg:hidden text-[30px];
+    color: var(--lendqsr-secondary);
+}
+
+
+.menuOpen {
+    @apply block sm:block md:block lg:hidden text-[30px];
+    color: var(--lendqsr-primary);
 }

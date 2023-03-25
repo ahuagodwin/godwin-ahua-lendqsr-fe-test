@@ -41,6 +41,7 @@ import { ImSpinner9 as Spinner } from "react-icons/im";
 import { MdOutlineNavigateNext as NextIcon, MdKeyboardArrowLeft as PrevIcon } from "react-icons/md";
 import { BsFillLockFill as PasswordShow, BsFillUnlockFill as PasswordHide } from "react-icons/bs";
 import { FaUserFriends as LendqsrUser } from "react-icons/fa";
+import { CgMenuGridR as LendqsrMenuIcon, CgCloseR as LendqsrMenuClose } from "react-icons/cg";
 
 
 
@@ -85,5 +86,7 @@ export const Icons = {
   LendqsrTransaction,
   LendqsrWhiteList,
   LendsqrDecModel,
-  LendqsrUser
+  LendqsrUser,
+  LendqsrMenuIcon,
+  LendqsrMenuClose
 }

@@ -16,7 +16,7 @@ export const dahsboard = [
           {
             icons: <Icons.LendqsrDashboard />,
             name: "Dashboard",
-            path: "/dashboard",
+            path: "#",
           },
         ],
       },
