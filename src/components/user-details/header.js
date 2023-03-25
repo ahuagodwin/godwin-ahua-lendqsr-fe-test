@@ -6,7 +6,7 @@ const header = () => {
     <>
       <Style.Wrapper sx="block lg:flex justify-between items-center">
         <Style.Text sx="header-title">User Details</Style.Text>
-        <Style.Section sx="flex justify-center items-center gap-3">
+        <Style.Section sx="block sm:block md:flex lg:flex justify-center items-center gap-3">
           <Style.Button
             name="BLACKLIST USER"
             bg="bg-transparent"
