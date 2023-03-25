@@ -9,18 +9,21 @@ import Pagination from "../../common/pagination/Pagination";
 
 const Table = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const [ isSort, setIsSort ] = useState(false);
   const dispatch = useDispatch();
   const { loading, user, error } = useSelector(selectUser);
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage, setItemsPerPage] = useState(10);
 
-
   const navigate = useNavigate();
+
+  const handleSort = () => {
+    setIsSort(!isSort)
+  }
 
   useEffect(() => {
     dispatch(fetchAdminUser());
   }, [dispatch]);
-
 
 // a function to handle the status of each user
   const getStatus = (user) => {
@@ -57,7 +60,7 @@ const Table = () => {
     <>
       <Style.Wrapper sx="relative overflow-x-auto shadow-md sm:rounded-lg mt-10 h-[35rem]">
         <Style.Table sx="w-full text-sm text-left text-black bg-white p-4">
-          <Style.THead sx="text-xs uppercase bg-[#F9FAFB] text-black">
+          <Style.THead sx="text-xs uppercase bg-[#F9FAFB] text-black relative">
             <Style.TR sx="relative">
               {table_head.map((item, id) => (
                 <Style.TH scope="col" sx="px-4 py-3" key={id}>
@@ -65,6 +68,7 @@ const Table = () => {
                     {item.title}
                     <Style.Section
                       sx="cursor-pointer ml-2"
+                      onClick={handleSort}
                     >
                       {item.sort}
                     </Style.Section>
@@ -76,14 +80,20 @@ const Table = () => {
               </Style.TH>
             </Style.TR>
           </Style.THead>
+          {isSort && 
+          <Style.Wrapper sx="sorting__table">
+                <Style.Text>Sorting Here</Style.Text>
+            </Style.Wrapper>}
 
           <Style.TBody>
             <>
               {loading ? (
-                    <Style.Text sx="loading__spinner"><Icons.Spinner /></Style.Text>
+                <Style.Text sx="loading__spinner">
+                  <Icons.Spinner />
+                </Style.Text>
               ) : error ? (
                 <Style.TR>
-                    <Style.Text>{error}</Style.Text>
+                  <Style.Text>{error}</Style.Text>
                 </Style.TR>
               ) : (
                 <>
@@ -97,9 +107,13 @@ const Table = () => {
                           ? item.orgName.slice(0, 10) + "..."
                           : item.orgName}
                       </Style.TH>
-                      <Style.TD sx="px-4 py-4 ellipsis">{item.userName}</Style.TD>
+                      <Style.TD sx="px-4 py-4 ellipsis">
+                        {item.userName}
+                      </Style.TD>
                       <Style.TD sx="px-4 py-4 ellipsis">{item.email}</Style.TD>
-                      <Style.TD sx="px-4 py-4 ellipsis">{item.phoneNumber}</Style.TD>
+                      <Style.TD sx="px-4 py-4 ellipsis">
+                        {item.phoneNumber}
+                      </Style.TD>
                       <Style.TD sx="px-4 py-4 ellipsis">
                         {item.createdAt.length > 10
                           ? item.createdAt.slice(0, 10) + "..."
@@ -135,13 +149,15 @@ const Table = () => {
                                 }
                                 sx="cursor-pointer flex items-center gap-2"
                               >
-                                <Icons.LendqsrViewDetails />View Details
+                                <Icons.LendqsrViewDetails />
+                                View Details
                               </Style.Text>
                               <Style.Text sx="activate flex items-center gap-2">
-                                <Icons.LendqsrActivateUserIcon />   Activate User
+                                <Icons.LendqsrActivateUserIcon /> Activate User
                               </Style.Text>
                               <Style.Text sx="blacklist flex items-center gap-2">
-                                 <Icons.LendqsrBlackListUserIcon />  Blacklist User
+                                <Icons.LendqsrBlackListUserIcon /> Blacklist
+                                User
                               </Style.Text>
                             </Style.Section>
                           </Style.Wrapper>

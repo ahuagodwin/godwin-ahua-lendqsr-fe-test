@@ -7,3 +7,9 @@
 .blacklist, .error {
     color: var(--lendqsr-blacklist);
 }
+
+
+.sorting__table {
+    background-color: var(--lendqsr-app);
+    @apply p-4 z-40 absolute top-10 left-4 shadow-md border border-gray-300;
+}

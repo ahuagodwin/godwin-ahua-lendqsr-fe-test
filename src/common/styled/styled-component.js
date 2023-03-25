@@ -110,7 +110,7 @@ export const Table = (props) => {
 
 export const TR = (props) => {
     return (
-        <tr className={props.sx} onClick={props.onClick} id={props.id} onChange={props.onChange} key={props.key}>{props.children}</tr>
+        <tr className={props.sx} onClick={props.onClick} id={props.id} onChange={props.onChange}>{props.children}</tr>
     )
 }
 
@@ -134,6 +134,6 @@ export const THead = (props) => {
 
 export const TH = (props) => {
     return (
-        <th className={props.sx} onClick={props.onClick} id={props.id} onChange={props.onChange} key={props.key} scope={props.scope}>{props.children}</th>
+        <th className={props.sx} onClick={props.onClick} id={props.id} onChange={props.onChange} scope={props.scope}>{props.children}</th>
     )
 }

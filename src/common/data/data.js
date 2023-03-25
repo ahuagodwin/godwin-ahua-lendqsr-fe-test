@@ -159,31 +159,37 @@ export const user__card__overview = [
 
 export const table_head = [
     {
+        id: 1,
         title: "Organization",
         sort: <Icons.LendqsrSort />
     },
 
     {
+        id: 2,
         title: "Username",
         sort: <Icons.LendqsrSort />
     },
     {
+        id: 3,
         title: "Email",
         sort: <Icons.LendqsrSort />
     },
 
     {
+      id: 4,
         title: "Phone Number",
         sort: <Icons.LendqsrSort />
     },
 
 
     {
+      id: 5,
         title: "Date Joined",
         sort: <Icons.LendqsrSort />
     },
 
     {
+      id: 6,
         title: "Status",
         sort: <Icons.LendqsrSort />
     },
