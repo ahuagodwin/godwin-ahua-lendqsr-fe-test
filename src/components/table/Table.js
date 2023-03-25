@@ -135,15 +135,15 @@ const Table = () => {
                                 onClick={() =>
                                   navigate(`/dashboard/user/${item.id}`)
                                 }
-                                sx="cursor-pointer"
+                                sx="cursor-pointer flex items-center gap-2"
                               >
-                                View Details
+                                <Icons.LendqsrViewDetails />View Details
                               </Style.Text>
-                              <Style.Text sx="activate">
-                                Activate User
+                              <Style.Text sx="activate flex items-center gap-2">
+                                <Icons.LendqsrActivateUserIcon />   Activate User
                               </Style.Text>
-                              <Style.Text sx="blacklist">
-                                Blacklist User
+                              <Style.Text sx="blacklist flex items-center gap-2">
+                                 <Icons.LendqsrBlackListUserIcon />  Blacklist User
                               </Style.Text>
                             </Style.Section>
                           </Style.Wrapper>
