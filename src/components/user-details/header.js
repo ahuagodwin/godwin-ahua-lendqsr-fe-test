@@ -4,9 +4,9 @@ import { Style } from "../../common/styled/Styled";
 const header = () => {
   return (
     <>
-      <Style.Wrapper sx="block lg:flex justify-between items-center">
+      <Style.Wrapper sx="block sm:block md:flex lg:flex justify-between items-center  space-y-2 sm:space-y-0 md:space-y-0 lg:space-y-0">
         <Style.Text sx="header-title">User Details</Style.Text>
-        <Style.Section sx="block sm:block md:flex lg:flex justify-center items-center gap-3">
+        <Style.Section sx="block sm:flex md:flex lg:flex justify-between items-center gap-3 space-y-3 sm:space-y-0 md:space-y-0 lg:space-y-0">
           <Style.Button
             name="BLACKLIST USER"
             bg="bg-transparent"

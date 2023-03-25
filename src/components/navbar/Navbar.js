@@ -26,7 +26,7 @@ const Navbar = () => {
           <Icons.LendqsrDashboardLogo
             width="100"
             height="30"
-            sx="block sm:block md:hidden lg:hidden"
+            sx="hidden sm:block md:hidden lg:hidden"
           />
           <Style.Wrapper sx="navbar__search__input">
             <Style.Input type="search" name="search" />
