@@ -9,7 +9,7 @@
 }
 
 .navbar__left__wrapper {
-    @apply flex justify-center items-center gap-4 lg:gap-36
+    @apply flex justify-center items-center gap-2 sm:gap-2 md:gap-3 lg:gap-14;
 }
 
 .navbar__search__input {
