@@ -42,8 +42,8 @@ const Login = () => {
     if (email === "godwincahua@gmail.com" && password === "password") {
       // If email and password match the default values, navigate to dashboard and display success message  
       toast.success("Login successful!");
-      navigate("/dashboard/user");
       setIsLoading(false);
+      navigate("/dashboard/user");
   
     } else {
       // If email and password do not match the default values, display error message

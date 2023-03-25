@@ -1,3 +1,4 @@
+import { Icons } from "../../constant/Icons";
 
 
 export const Wrapper = (props) => {
@@ -89,7 +90,7 @@ export const Button = (props) => {
         id={props.id ?? undefined}
         className={`p-3 ${props.sx} ${props.bg || "auth__layout__btn"} ${props.color || "text-white"}`}
       >  
-        <Span>{props.name || "Lendqsr"}</Span> 
+       {props.isLoading ? <div className="loading__spinner"> <Icons.Spinner /></div> :  <Span>{props.name || "Lendqsr"}</Span> }
       </button>
     );
 }
