@@ -98,7 +98,7 @@ body {
 
 
 .loading__spinner {
-    @apply flex justify-center items-center animate-spin ml-[30rem] my-10 text-[35px];
+    @apply flex justify-center items-center animate-spin ml-[5rem] sm:ml-[5rem] md:ml-[7rem] lg:ml-[30rem] my-10 text-[35px];
     color: var(--lendqsr-primary);
 }
 
